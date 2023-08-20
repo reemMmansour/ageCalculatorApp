@@ -1,0 +1,190 @@
+:root {
+  --background-color-page: #e5e5e5;
+  --background-color-container: #ffffff;
+  --border-color-input: #e5e5e5;
+  --purple-color: #7149c6;
+  --text-color: #606163;
+  --color: #8000ff;
+  --light-gray: #eee;
+  --red-color: #ff6d6d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color);
+  background-color: var(--background-color-page);
+}
+
+.container {
+  width: 44rem;
+  height: 30rem;
+  margin: 4rem auto;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: none;
+  border-radius: 1rem;
+  border-bottom-right-radius: 10rem;
+  background-color: var(--background-color-container);
+}
+
+.input-div {
+  width: 35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+}
+
+.date-container {
+  position: relative;
+  width: 10rem;
+  height: 6.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+label {
+  /* display: block; */
+  margin: 0.5rem;
+}
+
+input {
+  /* position: relative; */
+  width: 9rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 10px -3px, rgba(0, 0, 0, 0.2) 0px -1px 3px inset;
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+  color: var(--purple-color);
+}
+input:focus {
+  border-color: var(--purple-color);
+}
+
+.buttom-div {
+  width: calc(44rem - 6rem);
+  position: relative;
+  top: 0rem;
+}
+/* --------------------- Span - validation ------------- */
+
+.required-day,
+.required-month,
+.required-year,
+.validation-day,
+.validation-month,
+.validation-year,
+.valid-data {
+  display: none;
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0.5rem;
+  color: var(--red-color);
+  font-size: 12px;
+}
+
+/* ----------------------------Buttom ------------------- */
+
+button::before {
+  content: "";
+  position: absolute;
+  right: 5rem;
+  top: 2.3rem;
+  width: 33rem;
+  height: 0.1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 10px -3px, rgba(0, 0, 0, 0.2) 0px -1px 3px inset;
+}
+
+button {
+  position: absolute;
+  right: 0rem;
+  z-index: 3;
+  bottom: -3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color);
+}
+
+/* ---------------Start Media Query--------------- */
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+  .container {
+    width: 30rem;
+    height: 40rem;
+    justify-content: space-evenly;
+  }
+  .input-div {
+    justify-content: flex-start;
+  }
+  #day,
+  #month,
+  #year {
+    width: 6rem;
+  }
+
+  .date-container {
+    width: 8rem;
+  }
+
+  .buttom-div {
+    width: 24rem;
+    height: 6rem;
+  }
+
+  .buttom-icon {
+    right: 10rem;
+    top: 0rem;
+  }
+
+  .buttom-icon::before {
+    right: -10rem;
+    width: 24rem;
+  }
+}
+
+/* ---------------End Media Query--------------- */
+
+.show-age {
+  margin-left: 2rem;
+  width: 36rem;
+  height: 4rem;
+}
+
+p,
+strong {
+  font-style: italic;
+  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+  margin: 0rem;
+}
+
+p {
+  font-size: 60px;
+  color: black;
+}
+
+strong {
+  letter-spacing: 0.5rem;
+  color: var(--purple-color);
+}
